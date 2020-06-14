@@ -12,18 +12,20 @@ import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 
 import static net.dv8tion.jda.api.OnlineStatus.ONLINE;
+import static net.dv8tion.jda.api.entities.Activity.playing;
 import static net.dv8tion.jda.api.requests.GatewayIntent.GUILD_MEMBERS;
 
 public class TeamBot {
-	public static JDA jda;
 	public static String prefix = "*";
 
-	public static void main(String args[]) throws LoginException
+	public static void main(String[] args) throws LoginException, InterruptedException
 	{
-		jda = JDABuilder.createDefault("token").enableIntents(GUILD_MEMBERS).setActivity(Activity.playing("Acidic League")).build();
-		
-		jda.getPresence().setStatus(ONLINE);
-		
-		jda.addEventListener(new Info(), new TeamCommands(), new ColorChooserEvent());
+		JDABuilder.createDefault("token")
+				.enableIntents(GUILD_MEMBERS)
+				.setActivity(playing("Acidic League"))
+				.setStatus(ONLINE)
+				.addEventListeners(new Info(), new TeamCommands(), new ColorChooserEvent())
+				.build()
+				.awaitReady();
 	}
 }
