@@ -11,6 +11,7 @@ import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 
+import static net.dv8tion.jda.api.OnlineStatus.ONLINE;
 import static net.dv8tion.jda.api.requests.GatewayIntent.GUILD_MEMBERS;
 
 public class TeamBot {
@@ -21,10 +22,8 @@ public class TeamBot {
 	{
 		jda = JDABuilder.createDefault("token").enableIntents(GUILD_MEMBERS).setActivity(Activity.playing("Acidic League")).build();
 		
-		jda.getPresence().setStatus(OnlineStatus.ONLINE);
+		jda.getPresence().setStatus(ONLINE);
 		
-		jda.addEventListener(new Info());
-		jda.addEventListener(new TeamCommands());
-		jda.addEventListener(new ColorChooserEvent());
+		jda.addEventListener(new Info(), new TeamCommands(), new ColorChooserEvent());
 	}
 }
