@@ -16,7 +16,7 @@ import static net.dv8tion.jda.api.entities.Activity.playing;
 import static net.dv8tion.jda.api.requests.GatewayIntent.GUILD_MEMBERS;
 
 public class TeamBot {
-	public static String prefix = "*";
+	public static final String prefix = "*";
 
 	public static void main(String[] args) throws LoginException, InterruptedException
 	{
