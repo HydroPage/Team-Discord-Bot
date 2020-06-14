@@ -11,7 +11,7 @@ public class Info extends ListenerAdapter
     {
         String[] args = event.getMessage().getContentRaw().split(" ");
 
-        if (args[0].equalsIgnoreCase(TeamBot.prefix + "info"))
+        if (args[0].equalsIgnoreCase(TeamBot.PREFIX + "info"))
         {
             EmbedBuilder info = new EmbedBuilder();
             info.setTitle("Team Bot");

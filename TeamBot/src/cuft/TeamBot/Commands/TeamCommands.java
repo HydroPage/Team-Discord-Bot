@@ -35,7 +35,7 @@ public class TeamCommands extends ListenerAdapter
 
         List<Role> allUserRoles = event.getMember().getRoles();
 
-        if (args[0].equalsIgnoreCase(TeamBot.prefix + "create"))
+        if (args[0].equalsIgnoreCase(TeamBot.PREFIX + "create"))
         {
             if (util.isOnTeam(allUserRoles))
             {
@@ -85,7 +85,7 @@ public class TeamCommands extends ListenerAdapter
         }
 
         //Delete command
-        if (args[0].equalsIgnoreCase(TeamBot.prefix + "delete"))
+        if (args[0].equalsIgnoreCase(TeamBot.PREFIX + "delete"))
         {
             if (!util.isOnTeam(allUserRoles))
             {
