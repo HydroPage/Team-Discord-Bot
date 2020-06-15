@@ -1,15 +1,11 @@
 package cuft.TeamBot;
 
-import javax.security.auth.login.LoginException;
-
 import cuft.TeamBot.Commands.ColorChooserEvent;
 import cuft.TeamBot.Commands.Info;
 import cuft.TeamBot.Commands.TeamCommands;
-import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.OnlineStatus;
-import net.dv8tion.jda.api.entities.Activity;
-import net.dv8tion.jda.api.requests.GatewayIntent;
+
+import javax.security.auth.login.LoginException;
 
 import static net.dv8tion.jda.api.OnlineStatus.ONLINE;
 import static net.dv8tion.jda.api.entities.Activity.playing;
